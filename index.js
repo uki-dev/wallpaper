@@ -116,7 +116,6 @@ const mesh = new THREE.LineSegments(geometry, material);
 scene.add(mesh);
 
 const animate = (time = 0) => {
-  console.log(getComputedStyle(document.documentElement).getPropertyValue('--wireframe-color'));
   material.uniforms.time.value = time / 1000;
   material.uniforms.color.value = new THREE.Color(getComputedStyle(document.documentElement).getPropertyValue('--wireframe-color').trim());
   renderer.render(scene, camera);
