@@ -1,8 +1,6 @@
 const width = 512;
 const length = 512;
 
-const simplex = new SimplexNoise();
-
 const vertexShader = `
 uniform float time;
 
@@ -132,9 +130,3 @@ window.addEventListener('resize', () => {
   renderer.setSize(window.innerWidth, window.innerHeight, true);
   renderer.render(scene, camera);
 }, false);
-
-const gyroscope = new Gyroscope({ frequency: 60 });
-gyroscope.addEventListener('reading', () => {
-  mesh.rotation.set(new THREE.Vector3(gyroscope.x, gyroscope.y, gyroscope.z));
-});
-gyroscope.start();
