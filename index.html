@@ -1,0 +1,24 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      --wireframe-color: #99FFDD;
+    }
+    canvas {
+      filter: url("data:image/svg+xml;utf8,<filter xmlns='http://www.w3.org/2000/svg' id='chromatic-aberration'><feColorMatrix type='matrix' result='red' values='1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0'/><feOffset in='red' dx='2' dy='2' result='red'/><feColorMatrix type='matrix' in='SourceGraphic' result='blue' values='0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0'/><feOffset in='blue' dx='-2' dy='-2' result='blue'/><feBlend mode='screen' in='red' in2='blue'/></filter> #chromatic-aberration")
+    }
+  </style>
+</head>
+<body>
+  <canvas id="canvas" style="position: fixed; left: 0; top: 0; width: 100vw; height: 100vh; z-index: -1;"></canvas>
+  <script src="three.min.js"></script>
+  <script src="simplex-noise.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
