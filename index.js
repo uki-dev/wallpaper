@@ -93,8 +93,6 @@ for (let z = 0; z < length - 1; z++) {
 geometry.setIndex(indices);
 geometry.setAttribute('position', new THREE.Float32BufferAttribute(new Float32Array(vertices), 3));
 
-console.log(getComputedStyle(document.documentElement).getPropertyValue('--wireframe-color'));
-
 const material = new THREE.ShaderMaterial({
   vertexShader,
   fragmentShader,
