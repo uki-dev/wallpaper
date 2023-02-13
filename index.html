@@ -8,14 +8,32 @@
       margin: 0;
       padding: 0;
       --wireframe-color: #99FFDD;
+      color: white;
     }
     canvas {
       filter: url("data:image/svg+xml;utf8,<filter xmlns='http://www.w3.org/2000/svg' id='chromatic-aberration'><feColorMatrix type='matrix' result='red' values='1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0'/><feOffset in='red' dx='2' dy='2' result='red'/><feColorMatrix type='matrix' in='SourceGraphic' result='blue' values='0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0'/><feOffset in='blue' dx='-2' dy='-2' result='blue'/><feBlend mode='screen' in='red' in2='blue'/></filter> #chromatic-aberration")
+    }
+    img {
+      height: 4em;
+      width: auto;
+      margin: 1em;
+    }
+    .logos {
+      height: 100%;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
     }
   </style>
 </head>
 <body>
   <canvas id="canvas" style="position: fixed; left: 0; top: 0; width: 100vw; height: 100vh; z-index: -1;"></canvas>
+  <div class="logos">
+    <img src = "dio.svg"/>
+  </div>
   <script src="three.min.js"></script>
   <script src="index.js"></script>
 </body>
